@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+out*/
+batch_out/
+*.mp4
+!tests/
+weights/
+nets/
+.venv/
+*.pem
+*.key
+.env

@@ -1,0 +1,22 @@
+# THE ROUTING TABLE: one row per researched problem.
+# status: implemented -> has a module in modules/ and is fixed in software
+#         planned     -> not built yet; the dashboard only shows the advice
+# order: lower runs first (noise 1 -> lighting 2 -> sharpness 3)
+# threshold: score at or above these counts as "problem present"
+rows:
+  - {id: grain,            problem: "Grain / noise",             family: B, module: noise,     threshold: 0.30, order: 1, status: implemented, camera_fix: "Improve lighting; check gain / ISO settings"}
+  - {id: poor_indoor_light, problem: "Poor indoor light",        family: C, module: lighting_zerodce,  threshold: 0.35, order: 2, status: implemented, camera_fix: "Add lighting or an IR illuminator"}
+  - {id: blur,             problem: "Blurry image",             family: A, module: sharpness, threshold: 0.50, order: 3, status: implemented, camera_fix: "Re-focus the camera; check the lens"}
+  - {id: camera_shake,     problem: "Camera shaking",           family: A, module: null, status: planned, camera_fix: "Tighten the mount"}
+  - {id: autofocus_drift,  problem: "Focus changing automatically", family: A, module: null, status: planned, camera_fix: "Lock focus in camera settings"}
+  - {id: ringing,          problem: "Ringing around objects",   family: A, module: null, status: planned, camera_fix: "Lower sharpening / compression in camera"}
+  - {id: low_resolution,   problem: "Low resolution",           family: B, module: null, status: planned, camera_fix: "Raise stream resolution or bitrate"}
+  - {id: uneven_lighting,  problem: "Uneven lighting",          family: C, module: null, status: planned, camera_fix: "Rebalance lights; enable WDR"}
+  - {id: cloudy_scene,     problem: "Cloudy / hazy scene",      family: C, module: null, status: planned, camera_fix: "Enable camera defog mode"}
+  - {id: direct_sunlight,  problem: "Direct sunlight",          family: D, module: null, status: planned, camera_fix: "Enable WDR; reposition camera"}
+  - {id: window_backlight, problem: "Window backlighting",      family: D, module: null, status: planned, camera_fix: "Enable backlight compensation / WDR"}
+  - {id: vehicle_glare,    problem: "Vehicle light glare at night", family: D, module: null, status: planned, camera_fix: "Enable WDR; shield the lens"}
+  - {id: fog,              problem: "Fog",                      family: E, module: null, status: planned, camera_fix: "Enable camera defog mode"}
+  - {id: water_droplets,   problem: "Water droplets on lens",   family: E, module: null, status: planned, camera_fix: "Clean the dome / lens"}
+  - {id: dust_on_lens,     problem: "Dust on lens or camera",   family: E, module: null, status: planned, camera_fix: "Clean the dome / lens"}
+  - {id: reflections,      problem: "Reflections (glass, mirrors)", family: F, module: null, status: planned, camera_fix: "Polarizing filter; mark reflective zones"}

@@ -1,0 +1,8 @@
+opencv-python
+numpy
+pyyaml
+streamlit
+pandas
+torch                  # Zero-DCE++ lighting fix
+ultralytics==8.4.174   # YOLO person-detection check (detect_compare.py)
+pytest
